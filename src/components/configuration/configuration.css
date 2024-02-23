@@ -1,0 +1,53 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 30vw;
+    padding: 1rem;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin: 0;
+    }
+
+    details {
+        text-align: justify;
+
+        summary {
+            cursor: pointer;
+        }
+    }
+
+    .Category {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .Options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem;
+        
+            border: 1px solid #000;
+    
+            input {
+                margin-right: 1rem;
+            }
+    
+            details {
+                font-size: 0.9rem;
+                padding-inline: 0.5rem 
+            }
+        }
+    }
+
+    .ButtonGroup {
+        display: flex;
+        justify-content: space-evenly;
+        padding-block: 1rem;
+    }
+
+}

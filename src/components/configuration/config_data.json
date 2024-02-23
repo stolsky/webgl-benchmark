@@ -1,0 +1,37 @@
+{
+    "libraries": [
+        {
+            "name": "PixiJS v8.0.0",
+            "url": "https://pixijs.download/v8.0.0-rc.10/pixi.min.mjs"
+        },
+        {
+            "name": "regl v2.1.0",
+            "url": "https://npmcdn.com/regl@2.1.0/dist/regl.min.js"
+        },
+        {
+            "name": "vanilla 1.0.0",
+            "url": ""
+        }
+    ],
+    "collisions": [
+        {
+            "name": "Bounce off screen edges",
+            "descr": "Proin ut nunc in mi viverra finibus sit amet elementum nunc. In mattis euismod consectetur. Sed molestie eget nisl et commodo. Proin scelerisque bibendum nibh, eget tristique lectus accumsan vel. Etiam at consectetur nisl. In ut fermentum urna. Phasellus vitae risus viverra, finibus libero in, pretium quam. Donec lobortis hendrerit."
+        },
+        {
+            "name": "Bounce off each other",
+            "descr": "Sed tincidunt nibh eget gravida auctor. Ut scelerisque viverra nunc nec pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dictum lectus ut quam facilisis faucibus. Cras feugiat finibus malesuada. Sed quis vestibulum lorem. Nam elementum neque vitae quam vulputate sodales. Nam sit amet."
+        }
+    ],
+    "methods": [
+        {
+            "name": "Naive",
+            "descr": "Mauris euismod eros sit amet turpis fermentum molestie. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus fermentum tempor dui ut tincidunt. Aliquam lacinia bibendum purus, sodales finibus arcu congue at. Quisque mauris.",
+            "checked": true
+        },
+        {
+            "name": "Octree",
+            "descr": "Integer at feugiat dui. Donec iaculis, lacus ac sagittis tincidunt, risus metus sodales tortor, egestas vestibulum risus nisi non ante. Fusce ut ipsum semper sapien ornare iaculis eu ac massa. Fusce risus nisi, imperdiet non risus vel, volutpat cursus turpis. Pellentesque bibendum ante nisl, ut gravida lacus mattis ac. Sed."
+        }
+    ]
+}
