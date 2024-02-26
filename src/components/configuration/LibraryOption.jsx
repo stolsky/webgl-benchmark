@@ -1,18 +1,17 @@
 import { toggle_library } from "./form_signals"
 
 /**
- * @param {{ name: string }}
+ * @param {{ name: string, script: string }}
  *
  * @returns JSX.Element
  */
-export default ({ name }) => {
-    const value = name.toLowerCase().replace(/\s/g, "-")
+export default ({ name, value }) => {
     return (
         <div>
             <label>
                 <input
                     type="checkbox"
-                    value={value}
+                    value={name}
                     onClick={() => toggle_library(value)}
                 />{ name }
             </label>

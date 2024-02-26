@@ -1,10 +1,12 @@
-import config_data from "./config_data.json"
+import libraries from "../../../public/libraries/libraries.json"
+import settings from "./settings.json"
 
 import { For } from "solid-js"
 
+import { State, update_state } from "../state"
+
 import {
     form_is_valid,
-    submit_form_data,
     toggle_use_collision,
     use_collision
 } from "./form_signals"
@@ -32,11 +34,11 @@ export default () => {
                     Suspendisse a accumsan quam. Nullam vel vulputate felis. Ut fringilla, mi quis scelerisque venenatis, tellus ligula rhoncus eros, vitae venenatis leo felis a enim. Duis ut ipsum at est hendrerit convallis eu sit amet erat. Vestibulum nec ante in ipsum tincidunt feugiat eget ut nulla. Vivamus venenatis aliquam finibus. Pellentesque.
                 </Description>
                 <div className="Options">
-                    <For each={config_data.libraries}>
+                    <For each={libraries}>
                         {(item, index) => (<LibraryOption
                             key={`library-${index+1}`}
                             name={item.name}
-                            url={item.url}
+                            value={JSON.stringify(item)}
                         />)}
                     </For>
                 </div>
@@ -45,7 +47,7 @@ export default () => {
             <div className="Category">
                 <h3>Settings</h3>
                 <Description title="About">
-                Vestibulum non nisi condimentum, tristique ex molestie, sodales urna. Duis iaculis pellentesque suscipit. Proin dictum, velit luctus porttitor placerat, erat nibh scelerisque ex, non blandit arcu quam quis lacus. Pellentesque ac congue eros, et volutpat ante. Maecenas ut leo egestas, sodales lacus nec, pharetra lectus. Maecenas vulputate nisl non blandit.
+                    Vestibulum non nisi condimentum, tristique ex molestie, sodales urna. Duis iaculis pellentesque suscipit. Proin dictum, velit luctus porttitor placerat, erat nibh scelerisque ex, non blandit arcu quam quis lacus. Pellentesque ac congue eros, et volutpat ante. Maecenas ut leo egestas, sodales lacus nec, pharetra lectus. Maecenas vulputate nisl non blandit.
                 </Description>
 
                 <div className={`Options${use_collision() ? "" : " Disabled"}`}>
@@ -65,7 +67,7 @@ export default () => {
                         </Description>
                     </div>
 
-                    <For each={config_data.collisions}>
+                    <For each={settings.collisions}>
                         {(item, index) => (<CollisionOption
                             key={`collision-${index+1}`}
                             name={item.name}
@@ -78,7 +80,7 @@ export default () => {
                 <div className={`Options${use_collision() ? "" : " Disabled"}`}>
                     <h4>Collision Detection</h4>
 
-                    <For each={config_data.methods}>
+                    <For each={settings.methods}>
                         {(item, index) => (<MethodOption
                             key={`method-${index+1}`}
                             name={item.name}
@@ -91,7 +93,7 @@ export default () => {
 
             <div className="ButtonGroup">
                 <button
-                    onClick={() => submit_form_data()}
+                    onClick={() => update_state(State.Benchmark)}
                     disabled={!form_is_valid()}
                 >
                     Run

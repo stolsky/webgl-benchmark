@@ -3,9 +3,9 @@ import {
     Switch
 } from "solid-js"
 
-import { route, reroute } from "./route"
+import { State, is_state, update_state } from "./state"
 
-import Benchmark from "./benchmark/Benchmark"
+import Benchmarks from "./benchmarks/Benchmarks"
 import Configuration from "./configuration/Configuration"
 import Results from "./results/Results"
 
@@ -15,18 +15,18 @@ import Results from "./results/Results"
  * @returns { JSX.Element }
  */
 export default ({ init }) => {
-    reroute(init)
+    update_state(init)
     return (
         <main>
             <h1>WebGL Benchmark</h1>
             <Switch>
-                <Match when={ route() === "configuration"}>
+                <Match when={ is_state(State.Configuration) }>
                     <Configuration />
                 </Match>
-                <Match when={ route() === "benchmark"}>
-                    <Benchmark />
+                <Match when={ is_state(State.Benchmark) }>
+                    <Benchmarks />
                 </Match>
-                <Match when={ route() === "results"}>
+                <Match when={ is_state(State.Results) }>
                     <Results />
                 </Match>
             </Switch>

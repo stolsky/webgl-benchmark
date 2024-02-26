@@ -1,8 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Main from "../components/Main";
+import Layout from "../layouts/Layout.astro"
+import Main from "../components/Main"
+
+import { State } from "../components/state"
 ---
 
 <Layout>
-	<Main init="configuration" client:load />
+	<Main init={State.Configuration} client:load />
 </Layout>
